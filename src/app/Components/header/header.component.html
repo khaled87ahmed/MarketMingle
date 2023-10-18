@@ -1,0 +1,94 @@
+<div class="fixed-top">
+
+    
+
+    <div style="background-color: black;" class=" py-3 d-flex justify-content-center text-white flex-wrap">
+        <h5 class="m-0 me-2 fw-lighter">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! </h5>
+        <h5 style="cursor: pointer;" class="border-bottom m-0">Shop Now</h5>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-light ">
+        <div class="container d-flex justify-content-start w-100">
+            <a routerLink="/home" class="navbar-brand fw-bolder">Exclusive</a>
+
+            <div class="d-flex w-100">
+
+                <input [(ngModel)]="searchValue" (ngModelChange)="onSearch()" class="form-control me-2 " type="search" placeholder="What are you looking for?"
+                    aria-label="Search">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/home" aria-current="page">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/search" aria-current="page">Products</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/categories" aria-current="page">Categories</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/brands" aria-current="page">Brands</a>
+                    </li>
+
+                    <li [hidden]="(isUserLoggedIn$ | async)" class="nav-item">
+                        <a class="nav-link active fw-bolder" routerLink="/login" aria-current="page">Login</a>
+                    </li>
+
+                    <li class="nav-item mt-4 mt-lg-1 mx-0 mx-lg-2 d-flex">
+                        <a style="cursor: pointer;" class="position-relative me-3" routerLink="/wishlist" aria-current="page">
+                            <img src="../../../../assets/wishlist.svg" alt="">
+                            <div class="counterLayer text-white bg-danger rounded-circle ">{{wishListQuantity$ | async}}</div>
+                        </a>
+
+                        <a style="cursor: pointer;" class="position-relative me-4" routerLink="/cart" aria-current="page">
+                            <img src="../../../../assets/cart.svg" alt="">
+                            <div class="counterLayer text-white bg-danger rounded-circle ">{{cartQuantity$ | async}}</div>
+                        </a>
+
+                        <div [hidden]="!(isUserLoggedIn$ | async)" class="position-relative">
+                            <img style="cursor: pointer;" (click)="changeDropDownValue()" src="../../../../assets/profile.svg" alt="">
+                            <div [class.changeHeight]="!isDropDownClicked" class="profileLayer flex-column">
+
+                                    <a routerLink="/profile"  style="cursor: pointer;" class="d-flex list align-items-center text-decoration-none">
+                                        <img src="../../../../assets/iconProfileList.svg" alt="">
+                                        <h5 class="m-0 text-white">Manage My Account </h5>
+                                    </a>
+
+                                    <a routerLink="/cart" style="cursor: pointer;" class="d-flex list align-items-center my-2 text-decoration-none">
+                                        <img class="ms-1 me-2" src="../../../../assets/iconMyOrder.svg" alt="">
+                                        <h5 class="m-0  text-white">My Order </h5>
+                                    </a>
+
+                                    <div (click)="onLogout()" style="cursor: pointer;" class="d-flex list align-items-center">
+                                        <img class="ms-0 me-2" src="../../../../assets/iconlogout.svg" alt="">
+                                        <h5 class="m-0  text-white">Logout </h5>
+                                    </div>
+                                    
+
+                            </div>
+
+                        </div>
+                        
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+</div>

@@ -1,0 +1,118 @@
+<div style="margin-top: 180px;">
+
+    <div class="container px-5">
+        <div class="row">
+
+            <h1 class="text-center fw-bolder">My Profile </h1>
+
+            <div class="row">
+
+                <h2 style="color: #DB4444;" class="">Edit Your Profile</h2>
+
+                <div [hidden]="errConstructor==''"class="alert alert-danger text-center py-3 mt-2">{{errConstructor}}</div>
+
+                <form [formGroup]="profileSchema">
+
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-12 col-sm-6 ">
+                            <label class="text-muted" for="firstName">First Name</label>
+                            <input formControlName="firstName" id="firstName" style="background-color: #F5F5F5;"
+                                class="form-control" type="text">
+                            <div [hidden]="!profileSchema.controls.firstName.value || profileSchema.controls.firstName.valid"
+                                class="alert alert-danger text-center py-3">must be min 3 characters</div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 mt-2 mt-sm-0">
+                            <label class="text-muted" for="secondName">Second Name</label>
+                            <input formControlName="secondName" id="secondName" style="background-color: #F5F5F5;"
+                                class="form-control" type="text">
+                            <div [hidden]="!profileSchema.controls.secondName.value || profileSchema.controls.secondName.valid"
+                                class="alert alert-danger text-center py-3">must be min 3 characters</div>
+                        </div>
+
+                    </div>
+
+                    <div class="row d-flex justify-content-between mt-4">
+                        <div class="col-12 col-sm-6 ">
+                            <label class="text-muted" for="email">Email</label>
+                            <input formControlName="email" id="email" style="background-color: #F5F5F5;"
+                                class="form-control" type="text">
+                            <div [hidden]="!profileSchema.controls.email.value || profileSchema.controls.email.valid"
+                                class="alert alert-danger text-center py-3">invalid email</div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 mt-2 mt-sm-0 ">
+                            <label class="text-muted" for="phone">Phone Number</label>
+                            <input formControlName="phone" id="phone" style="background-color: #F5F5F5;"
+                                class="form-control" type="text">
+                            <div [hidden]="!profileSchema.controls.phone.value || profileSchema.controls.phone.valid"
+                                class="alert alert-danger text-center py-3">invalid phone</div>
+                        </div>
+
+                    </div>
+
+                    <div class="row d-flex justify-content-between mt-4">
+                        <div class="col-12 col-sm-6">
+                            <label class="text-muted" for="address">Address</label>
+                            <input formControlName="address" id="address" style="background-color: #F5F5F5;"
+                                class="form-control" type="text">
+                            <div [hidden]="!profileSchema.controls.address.value || profileSchema.controls.address.valid"
+                                class="alert alert-danger text-center py-3">must be min 3 characters</div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 mt-2 mt-sm-0 ">
+                            <label class="text-muted" for="city">City</label>
+                            <input formControlName="city" id="city" style="background-color: #F5F5F5;"
+                                class="form-control" type="text">
+                            <div [hidden]="!profileSchema.controls.city.value || profileSchema.controls.city.valid"
+                                class="alert alert-danger text-center py-3">must be min 3 characters</div>
+                        </div>
+
+                    </div>
+
+                    <label class="text-muted mt-4">Password Changes</label>
+                    <div>
+                        <input formControlName="currentPasswod" id="currentPasswod" placeholder="Current Passwod"
+                            style="background-color: #F5F5F5;" class="form-control" type="password">
+                        <div [hidden]="!profileSchema.controls.currentPasswod.value || profileSchema.controls.currentPasswod.valid"
+                            class="alert alert-danger text-center py-3">password required</div>
+
+
+                        <input formControlName="newPasswod" id="newPasswod" placeholder="New Passwod"
+                            style="background-color: #F5F5F5;" class="form-control my-3" type="password">
+                        <div [hidden]="!profileSchema.controls.newPasswod.value || profileSchema.controls.newPasswod.valid"
+                            class="alert alert-danger text-center py-3">must contain capital letters and numbers</div>
+
+                        <input formControlName="confirmNewPasswod" id="confirmNewPasswod"
+                            placeholder="Confirm New Passwod" style="background-color: #F5F5F5;" class="form-control"
+                            type="password">
+                        <div [hidden]="!profileSchema.controls.confirmNewPasswod.value || profileSchema.controls.confirmNewPasswod.valid"
+                            class="alert alert-danger text-center py-3">password not matched</div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-5">
+                        <button routerLink="/products" class="btn btn-dark text-white">Cancel</button>
+                        <button (click)="onSave()" style="background-color: #DB4444;" class="btn text-white ms-3">Save
+                            Changes</button>
+                    </div>
+
+
+                    <div [hidden]="errPass==''"class="alert alert-danger text-center py-3 mt-2">{{errPass}}</div>
+                    <div [hidden]="errAddr==''"class="alert alert-danger text-center py-3 mt-2">{{errAddr}}</div>
+                    <div [hidden]="errUser==''"class="alert alert-danger text-center py-3 mt-2">{{errUser}}</div>
+
+
+                </form>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+</div>

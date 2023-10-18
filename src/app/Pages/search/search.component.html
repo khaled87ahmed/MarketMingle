@@ -1,0 +1,14 @@
+
+<div style="margin-top: 180px;">
+
+    
+    <div class="container px-5">
+        <div class="row">
+            <div  *ngFor="let item of products" class="col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
+                <app-card [wishlist]="wishlist" [item]="item"></app-card>
+            </div>
+        </div>
+    </div>
+
+
+</div>

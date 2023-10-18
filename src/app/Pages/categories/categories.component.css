@@ -1,0 +1,15 @@
+.layer {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    background-color: #db4444cf;
+    bottom: 0;
+    height: 0; 
+    overflow: hidden; 
+    transition: all 0.5s; 
+}
+
+.item:hover .layer {
+    height: 100%; 
+}
+

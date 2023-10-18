@@ -1,0 +1,95 @@
+<div style="margin-top: 180px;">
+
+
+
+    <div class="container px-5">
+        <div class="row">
+
+            <div>
+
+                <div class="d-flex align-items-center">
+                    <img src="../../../../assets/Rectangle.svg" alt="">
+                    <p style="color: #DB4444;" class="m-0 ms-2 ">Categories</p>
+                </div>
+                <h1 class="fw-bolder mt-2 mb-5">Browse By Category</h1>
+                
+                <p-carousel [circular]="true" [value]="categories" [numVisible]="3" [numScroll]="1"
+                    [responsiveOptions]="responsiveOptions">
+                    <ng-template let-category pTemplate="item" class="d-flex justify-content-center carousel-item">
+    
+                        <a style="cursor: pointer;" routerLink="/categories/{{ category._id }}" class="d-flex justify-content-center position-relative categoryItem">
+                            <img class="" width="150" height="150" src="{{category.image}}" alt="">
+                            <div class="layer d-flex justify-content-center align-items-center text-white">{{category.name}}</div>
+                        </a>
+    
+                    </ng-template>
+                </p-carousel>
+    
+                <div class="d-flex justify-content-end">
+                    <a routerLink="/categories" style="background-color: #DB4444;" class="btn text-white">View All Categories</a>
+                </div>
+
+            </div>
+
+            <div class="my-5" style="height: 2px; width: 100%; background-color: #DB4444;"></div>
+
+            <div>
+
+                <div class="d-flex align-items-center">
+                    <img src="../../../../assets/Rectangle.svg" alt="">
+                    <p style="color: #DB4444;" class="m-0 ms-2 ">Brands</p>
+                </div>
+                <h1 class="fw-bolder mt-2 mb-5">Browse By Brands</h1>
+                
+                <p-carousel [circular]="true" [value]="brands" [numVisible]="3" [numScroll]="1"
+                    [responsiveOptions]="responsiveOptions">
+                    <ng-template let-brand pTemplate="item" class="d-flex justify-content-center carousel-item">
+    
+                        <a style="cursor: pointer;" routerLink="/brands/{{ brand._id }}" class="d-flex justify-content-center position-relative brandItem">
+                            <img class="" width="150" height="150" src="{{brand.image}}" alt="">
+                            <div class="layer d-flex justify-content-center align-items-center text-white">{{brand.name}}</div>
+                        </a>
+    
+                    </ng-template>
+                </p-carousel>
+    
+                <div class="d-flex justify-content-end">
+                    <a routerLink="/brands" style="background-color: #DB4444;" class="btn text-white">View All Brands</a>
+                </div>
+
+            </div>
+            
+            <div class="my-5" style="height: 2px; width: 100%; background-color: #DB4444;"></div>
+
+            <div>
+
+                <div class="d-flex align-items-center">
+                    <img src="../../../../assets/Rectangle.svg" alt="">
+                    <p style="color: #DB4444;" class="m-0 ms-2 ">Our Products</p>
+                </div>
+                <h1 class="fw-bolder mt-2 mb-5">Explore Our Products</h1>
+                
+                <p-carousel [circular]="true" [value]="products" [numVisible]="3" [numScroll]="1"
+                    [responsiveOptions]="responsiveOptions">
+                    <ng-template let-item pTemplate="item" class="d-flex justify-content-center carousel-item ">
+    
+                        <div class="box">
+                            <app-card [wishlist]="wishlist" [item]="item"></app-card>
+                        </div>
+                        
+    
+                    </ng-template>
+                </p-carousel>
+    
+                <div class="d-flex justify-content-end">
+                    <a routerLink="/search" style="background-color: #DB4444;" class="btn text-white">View All Products</a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>

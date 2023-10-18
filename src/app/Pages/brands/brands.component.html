@@ -1,0 +1,29 @@
+<div style="margin-top: 180px;">
+
+
+
+    <div class="container px-5">
+        <div class="row">
+
+            <div class="d-flex align-items-center">
+                <img src="../../../../assets/Rectangle.svg" alt="">
+                <p style="color: #DB4444;" class="m-0 ms-2 ">Brands</p>
+            </div>
+            <h1 class="fw-bolder mt-2 mb-5">All Brands</h1>
+
+            <div *ngFor="let brand of brands"
+                class="col-4 col-sm-3 col-md-2 col-lg-1 mb-5 p-0 item  ">
+                <a routerLink="/brands/{{brand._id}}" class="d-flex justify-content-center position-relative">
+                    <img class="w-100 " height="100" src="{{brand.image}}" alt="">
+                    <div class="layer d-flex justify-content-center align-items-center text-white">{{brand.name}}
+                    </div>
+                </a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+</div>

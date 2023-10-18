@@ -1,0 +1,26 @@
+
+
+
+
+<div class="box px-1">
+
+    <div class="position-relative">
+        <a routerLink="/details/{{item.id}}"><img class="w-100" src={{item.imageCover}} alt=""></a>
+        <i class="fa-solid fa-heart wishlistLayerInCard position-absolute fs-4" [class.text-danger]="wishlist[item.id]"
+            (click)="toggleWishlist(item.id)"></i>
+        <div (click)="onAddToCart(item.id)"
+            class="w-100 bg-black position-absolute bottom-0 text-white d-flex justify-content-center align-items-center addToCartLayer">
+            <img src="../../../assets/addToCartIcon.svg" alt=""> Add To Cart
+        </div>
+    </div>
+    <h3 class="mt-2">{{item.title | firstThreeWords}} </h3>
+    <p>${{item.price}}</p>
+    
+    <div class="d-flex mb-2">
+        <div *ngFor="let star of [1,2,3,4,5]; let i = index">
+            <img *ngIf='handelNumberOfStars(i,item.ratingsAverage)' src='../../../assets/goldStar.svg' alt="">
+            <img *ngIf='!handelNumberOfStars(i,item.ratingsAverage)' src='../../../assets/greyStar.svg' alt="">
+        </div>
+    </div>
+
+</div>

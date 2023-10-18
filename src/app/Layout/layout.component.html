@@ -1,0 +1,11 @@
+<app-spinner *ngIf="loadingFlag$|async" ></app-spinner>
+
+<div class="layout">
+
+    <app-header></app-header>
+
+    <router-outlet></router-outlet>
+    
+    <app-footer></app-footer>
+    
+</div>

@@ -1,0 +1,106 @@
+<div style="margin-top: 150px;">
+
+
+
+    <div class="container px-5">
+        <div class="row">
+
+
+            <p-carousel class="col-12 col-lg-4 me-5" [circular]="true" [value]="item.images" [numVisible]="1"
+                [numScroll]="1">
+                <ng-template let-item pTemplate="item.images" class="d-flex justify-content-center carousel-item ">
+                    <div>
+                        <img src="{{item}}" class="d-block w-100" alt="...">
+                    </div>
+
+                </ng-template>
+            </p-carousel>
+
+
+
+            <div class="col-12 col-lg-7 ms-0 ms-lg-4">
+                <h1 class="mt-5 fw-medium">{{item.title}}</h1>
+
+                <div class="d-flex align-items-center">
+                    <div *ngFor="let star of [1,2,3,4,5]; let i = index">
+                        <img class="me-1" *ngIf='handelNumberOfStars(i,item.ratingsAverage)'
+                            src='../../../../assets/goldStar.svg' alt="">
+                        <img class="me-1" *ngIf='!handelNumberOfStars(i,item.ratingsAverage)'
+                            src='../../../../assets/greyStar.svg' alt="">
+                    </div>
+
+                    <p class="m-0 text-muted">({{item.ratingsQuantity}} Reviews)</p>
+                </div>
+
+                <h2 class="mt-2">$ {{item.price}}</h2>
+
+                <p>{{item.description}}</p>
+
+                <div style="height: 2px; background-color: #DB4444;" class="my-4 w-100"></div>
+
+                <div class="d-flex flex-wrap mb-5">
+
+                    <div
+                        class="d-flex align-items-center border border-2 border-danger rounded-top-1 rounded-bottom-1 me-3 mb-3">
+                        <button (click)="decQuantity()" style="background-color: white;"
+                            class="h-100 border border-2 border-danger border-start-0 border-top-0 border-bottom-0"><i
+                                class="fa-solid fa-minus"></i></button>
+                        <h3 class="m-0 px-5 fw-bolder">{{itemQuantity}}</h3>
+                        <button (click)="incQuantity()" class="h-100  bg-danger text-white border-0"><i
+                                class="fa-solid fa-plus"></i></button>
+                    </div>
+
+                    <button (click)="onAddToCart()" class="btn btn-danger px-5 me-3 mb-3">Buy Now</button>
+
+                    <i style="cursor: pointer;" class="fa-solid fa-heart wishlistLayerInCard fs-4 mt-1"
+                        [class.text-danger]="isWishList" (click)="handleWishlist()"></i>
+
+
+
+                </div>
+
+                <div class="w-100 border border-2 border-danger ">
+                    <div class="w-100 d-flex align-items-center px-4 mt-3">
+                        <img class="me-3" src="../../../../assets/iconDelivery.svg" alt="">
+                        <div class="d-flex flex-column justify-content-center">
+                            <h3 class="fw-bolder m-0">Free Delivery</h3>
+                            <h5 style="cursor: pointer;" class="m-0 fw-bolder text-decoration-underline ">Enter your
+                                postal code for Delivery Availability</h5>
+
+                        </div>
+
+                    </div>
+
+                    <div style="height: 1.5px; background-color: #DB4444;" class="my-4 w-100"></div>
+
+                    <div class="w-100 d-flex align-items-center px-4 mb-3">
+                        <img class="me-3" src="../../../../assets/iconReturn.svg" alt="">
+                        <div class="d-flex flex-column justify-content-center">
+                            <h3 class="fw-bolder m-0">Return Delivery</h3>
+                            <h5 class="m-0 fw-bolder text-decoration-underline">Free 30 Days Delivery Returns. Details
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+</div>

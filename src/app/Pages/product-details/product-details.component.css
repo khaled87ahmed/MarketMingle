@@ -1,0 +1,13 @@
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #DB4444;
+
+}
+
+.carousel-indicators .active {
+    background-color: #DB4444;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #333 !important;
+}

@@ -1,27 +1,45 @@
 # MarketMingle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+## Overview
+MarketMingle is an e-commerce website developed using Angular. It provides users with a seamless shopping experience, allowing them to explore various products, add them to the cart, and securely complete transactions using the Stripe payment gateway. Users are required to log in before adding items to the cart or wishlist.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- User authentication with login, registration, and password-reset functionalities.
+- Pages: Login, Register, Reset-Password, Categories, Brands, Shopping Cart, Wishlist, Search, Checkout, and Profile.
+- Interactive cart management: Add, update, and delete items.
+- Secure payment processing via the Stripe payment gateway.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular: A platform for building mobile and desktop web applications.
+- Bootstrap: A popular CSS framework for developing responsive and mobile-first websites.
+- Font Awesome: A font and icon toolkit based on CSS and Less.
+- NgRx: A powerful state management library for Angular applications.
+- PrimeNG: A collection of rich UI components for Angular.
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run the project locally, follow these steps:
 
-## Running unit tests
+1. Clone the repository: `git clone https://github.com/khaled87ahmed/MarketMingle.git`
+2. Install dependencies: `npm install`
+3. Set up environment variables for the Stripe payment integration.
+4. Run the development server: `ng serve`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+- Visit the website and use the provided navigation to explore product categories, brands, and the search feature.
+- Log in or register for a new account to access the cart and wishlist functionalities.
+- Proceed to the checkout page and complete the order using the Stripe payment option.
+- Manage your profile and update your email, password, name and address.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contributing
 
-## Further help
+Contributions are welcome. If you find any issues or want to enhance the features, please submit a pull request.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contact
+
+- Primary Email: khaledahmed783002@gmail.com
+- Secondary Email: khaledahmed872003@gmail.com
+- Phone: 01553305791

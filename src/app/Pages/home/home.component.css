@@ -1,0 +1,18 @@
+.layer {
+    position: absolute;
+    width: 100%;
+    background-color: #db4444cf;
+    bottom: 0;
+    height: 0; 
+    overflow: hidden; 
+    transition: all 0.7s; 
+}
+
+.categoryItem:hover .layer {
+    height: 100%; 
+}
+
+.brandItem:hover .layer {
+    height: 100%; 
+}
+

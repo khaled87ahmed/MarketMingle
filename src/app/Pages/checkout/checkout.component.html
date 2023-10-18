@@ -1,0 +1,129 @@
+<div style="margin-top: 180px;">
+
+    <div class="container px-5">
+        <div class="row">
+
+            <h1 class="text-center fw-bolder">Billing Details </h1>
+
+            <div class="row">
+
+                <form [formGroup]="billingSchema" class="col-12 col-lg-5">
+
+                    <label class="text-muted" for="name">Name</label>
+                    <input formControlName="name" id="name" style="background-color: #F5F5F5;"
+                        class="form-control" type="text">
+                    <div [hidden]="!billingSchema.controls.name.touched || billingSchema.controls.name.valid"
+                        class="alert alert-danger text-center py-3">must be min 3 characters</div>
+
+                    <label class="text-muted mt-4" for="details">Street Address</label>
+                    <input formControlName="details" id="details" style="background-color: #F5F5F5;"
+                        class="form-control" type="text">
+                    <div [hidden]="!billingSchema.controls.details.touched || billingSchema.controls.details.valid"
+                        class="alert alert-danger text-center py-3">must be min 3 characters</div>
+
+                    <label class="text-muted mt-4" for="detailsOptional">Apartment, floor, etc. (optional)</label>
+                    <input id="detailsOptional" style="background-color: #F5F5F5;" class="form-control" type="text">
+
+                    <label class="text-muted mt-4" for="city">Town/City</label>
+                    <input formControlName="city" id="city" style="background-color: #F5F5F5;" class="form-control"
+                        type="text">
+                    <div [hidden]="!billingSchema.controls.city.touched || billingSchema.controls.city.valid"
+                        class="alert alert-danger text-center py-3">must be min 3 characters</div>
+
+                    <label class="text-muted mt-4" for="phone">Phone Number</label>
+                    <input formControlName="phone" id="phone" style="background-color: #F5F5F5;" class="form-control"
+                        type="text">
+                    <div [hidden]="!billingSchema.controls.phone.touched || billingSchema.controls.phone.valid"
+                        class="alert alert-danger text-center py-3">invalid number</div>
+
+                </form>
+
+                <div class="col-12 col-lg-5 offset-lg-2 d-flex flex-column mt-5">
+
+                    <div *ngFor="let product of products" class="d-flex justify-content-between align-items-end mt-2">
+
+                        <div class="d-flex align-items-end">
+                            <img height="70" width="70" src="{{product.product.imageCover}}" alt="">
+                            <h4 class="">{{product.product.title | firstThreeWords}}</h4>
+                        </div>
+
+                        <h4>${{product.price}}</h4>
+
+
+
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-between align-items-end mt-2">
+                        <h4 class="mb-2">Subtotal:</h4>
+                        <h4 class="mb-2">${{result?.data?.totalCartPrice}}</h4>
+                    </div>
+
+                    <div style="height: 1px;" class="w-100 bg-black"></div>
+
+                    <div class="d-flex justify-content-between align-items-end mt-2">
+                        <h4 class="mb-2">Shipping:</h4>
+                        <h4 class="mb-2">Free</h4>
+                    </div>
+
+                    <div style="height: 0.5px;" class="w-100 bg-black"></div>
+
+                    <div class="d-flex justify-content-between align-items-end mt-2">
+                        <h4 class="mb-2">Total:</h4>
+                        <h4 class="mb-2">${{result?.data?.totalCartPrice}}</h4>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-end mt-2">
+
+                        <div class="d-flex align-items-center">
+                            <input type="radio" checked class="me-2" name="" id="">
+                            <h4 class="m-0">Bank</h4>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <img class="me-1" width="37.8px" height="16.8px" src="../../../../../assets/visa1.png"
+                                alt="">
+                            <img class="me-1" width="37.8px" height="11.2px" src="../../../../../assets/visa2.png"
+                                alt="">
+                            <img class="me-1" width="39.2px" height="25.2px" src="../../../../../assets/visa3.png"
+                                alt="">
+                            <img class="me-1" width="39.2px" height="18.2px" src="../../../../../assets/visa4.png"
+                                alt="">
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-end mt-4">
+
+                        <input style="background-color: #F5F5F5;" placeholder="Coupon Code" class="form-control w-50"
+                            type="text">
+                        <button style="background-color: #DB4444;" class="btn text-white">Apply Coupon</button>
+
+                    </div>
+
+                    <button (click)="onPlaceOrder()" style="background-color: #DB4444;" *ngIf="!billingLoading"
+                        [disabled]="!billingSchema.valid" class='btn text-white w-50 mt-4'>Place Order</button>
+                        
+
+                    <button *ngIf="billingLoading" disabled style="background-color: #DB4444;"
+                        class=' btn loginButton mt-5 w-100 '><i
+                            class="fa-solid fa-spinner fa-spin text-white"></i></button>
+                    <div [hidden]="!errMsg"
+                        class="alert alert-danger text-center py-3">There is no items to show</div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+</div>

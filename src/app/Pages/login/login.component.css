@@ -1,0 +1,79 @@
+.login {
+    margin-top: 0px;
+  }
+  
+  .content {
+    background-color: white;
+  }
+  
+  .lightColor {
+    color: #adb5bd;
+  }
+  
+  .inputBorder {
+    border: 1px #adb5bd solid;
+  }
+  
+  .loginButton {
+    background-color: #DB4444;
+    color: white;
+  }
+  
+  .backgroundImg {
+    background-image: url('../../../assets/loginImg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 105%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    z-index: 999;
+  }
+  
+  .moveLeft {
+  
+    transform: translateX(-104%);
+  }
+  
+  .inputContainer{
+    
+    transition: all 0.5s ease;
+  
+  }
+  
+  input::placeholder {
+    color: #adb5bd !important;
+  
+  }
+  
+  span {
+    color: #adb5bd;
+    translate: -150%;
+    transform: translateY(20%);
+    transition: all 0.3s;
+  }
+  
+  input{
+    border-bottom: 2px solid #adb5bd !important;
+  }
+  
+  input::placeholder{
+    transition: all 0.3s;
+  }
+  
+  
+  input:hover::placeholder,input:focus::placeholder{
+    color: #DB4444 !important;
+  }
+  
+  input:hover,input:focus{
+    border-color: #DB4444 !important;
+  }
+  
+  
+  input:hover ~ span{
+    color: #DB4444;
+  }
+  
+  input:focus ~ span{
+    color: #DB4444;
+  }
