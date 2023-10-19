@@ -13,7 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/MarketMingle/",
             "outputPath": "dist/market-mingle",
             "index": "src/index.html",
             "main": "src/main.ts",
